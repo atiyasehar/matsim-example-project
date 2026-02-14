@@ -1,23 +1,14 @@
 # Python Code
 
-This directory contains Python utilities for orchestrating MATSim runs.
+Python is now the primary entrypoint language for this project.
 
-## Run the pipeline end-to-end
+## Commands
 
-Use `pipeline_runner.py` to build the project and launch `org.matsim.project.RunMatsim`.
+From the repository root:
 
 ```bash
-python src/main/python/pipeline_runner.py
+python main.py build --skip-tests
+python main.py run --build --skip-tests
 ```
 
-You can also import the function in your own scripts:
-
-```python
-from src.main.python.pipeline_runner import run_pipeline_end_to_end
-
-run_pipeline_end_to_end(
-    config_path="scenarios/equil/config.xml",
-    output_directory="scenarios/equil/output-local",
-    last_iteration=5,
-)
-```
+The Python CLI delegates to Maven/Java under the hood to build and run MATSim.

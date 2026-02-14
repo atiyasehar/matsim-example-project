@@ -1,0 +1,3 @@
+# Make repository language statistics reflect the Python-first workflow.
+*.java linguist-vendored
+*.py linguist-detectable=true
