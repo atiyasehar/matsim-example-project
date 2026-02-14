@@ -70,6 +70,17 @@ The **MATSim input files, output files, analysis data and visualizations** are l
 
 
 
+
+### Interactive HTML documentation
+
+An interactive guide is available at `docs/index.html` to help you understand the project structure and the synthetic-population preparation flow from your own input files.
+
+After enabling GitHub Pages (via the included workflow), the page is expected at:
+
+```
+https://<your-github-username>.github.io/<your-repository-name>/
+```
+
 ### Notes for population synthesis workflows
 
 This repository is a MATSim example project and does **not** currently include Montreal population-synthesis notebooks or scripts. In the current codebase, there are no scripts that generate a synthetic population from raw census/microdata; the included `scenarios/equil/plans100.xml` is an already prepared MATSim plans file.
