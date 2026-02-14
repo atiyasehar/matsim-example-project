@@ -67,3 +67,25 @@ The **MATSim input files, output files, analysis data and visualizations** are l
 **Other data files**, in particular in `original-input-data`, have their own individual licenses that need to be individually clarified with the copyright holders.
 
 
+
+### Notes for population synthesis workflows
+
+This repository is a MATSim example project and does **not** currently include Montreal population-synthesis notebooks or scripts. In the current codebase, there are no scripts that generate a synthetic population from raw census/microdata; the included `scenarios/equil/plans100.xml` is an already prepared MATSim plans file.
+
+The executable entry points are:
+- `org.matsim.project.RunMatsim` (runs a MATSim simulation with a config file)
+- `org.matsim.project.RunMatsimApplication` (MATSim application-style entry point)
+- `src/main/python/pipeline_runner.py` (Python helper that builds and runs `RunMatsim` end-to-end)
+
+A practical local command sequence is:
+
+```bash
+./mvnw clean package
+java -cp matsim-example-project-0.0.1-SNAPSHOT.jar org.matsim.project.RunMatsim scenarios/equil/config.xml
+```
+
+Or use Python:
+
+```bash
+python src/main/python/pipeline_runner.py
+```
