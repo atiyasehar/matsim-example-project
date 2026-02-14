@@ -2,6 +2,8 @@
 
 A small example of how to use MATSim as a library.
 
+This repository now uses a **Python-first CLI** as its main entrypoint. Use `python main.py` to build/run the project while still using the existing Maven + Java runtime underneath.
+
 By default, this project uses the latest (pre-)release. In order to use a different version, edit `pom.xml`.
 
 A recommended directory structure is as follows:
@@ -39,19 +41,19 @@ suitable sdk manually, which is available [here](https://openjdk.java.net/)
 You can build an executable jar-file by executing the following command:
 
 ```sh
-./mvnw clean package
+python main.py build --skip-tests
 ```
 
 or on Windows:
 
 ```sh
-mvnw.cmd clean package
+python main.py build --skip-tests
 ```
 
-This will download all necessary dependencies (it might take a while the first time it is run) and create a file `matsim-example-project-0.0.1-SNAPSHOT.jar` in the top directory. This jar-file can either be double-clicked to start the MATSim GUI, or executed with Java on the command line:
+This will download all necessary dependencies (it might take a while the first time it is run) and create a file `target/matsim-example-project-0.0.1-SNAPSHOT.jar`. This jar-file can either be double-clicked to start the MATSim GUI, or executed with Java on the command line:
 
 ```sh
-java -jar matsim-example-project-0.0.1-SNAPSHOT.jar
+python main.py run --build --skip-tests
 ```
 
 
